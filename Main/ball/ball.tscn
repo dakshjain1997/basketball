@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c2j2f3lwd8mn1"]
+
+[ext_resource type="Script" uid="uid://dxxje1lnqwjw3" path="res://Main/ball/ball.gd" id="1_heu8l"]
+[ext_resource type="Texture2D" uid="uid://tfwrarrsg47b" path="res://Main/ball/basketBall2.png" id="2_3fvto"]
+[ext_resource type="Texture2D" uid="uid://dki1hhpu5u1wm" path="res://Main/ball/basketBall2_n.png" id="3_iiu2n"]
+[ext_resource type="Texture2D" uid="uid://0why6n7bu2pm" path="res://Main/ball/basketball3_s.png" id="4_n24lf"]
+[ext_resource type="PackedScene" uid="uid://6floo0qi8w0r" path="res://Main/ball/shadowManager/shadow_manager.tscn" id="5_po83k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fh4s0"]
+bounce = 0.75
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4iyqm"]
+diffuse_texture = ExtResource("2_3fvto")
+normal_texture = ExtResource("3_iiu2n")
+specular_texture = ExtResource("4_n24lf")
+specular_color = Color(0.976492, 0.434061, 0.21861, 1)
+specular_shininess = 0.14
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31if0"]
+radius = 58.0
+
+[node name="Ball" type="RigidBody2D" unique_id=436964236]
+z_index = 4
+collision_layer = 12
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_fh4s0")
+script = ExtResource("1_heu8l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1653274234]
+texture = SubResource("CanvasTexture_4iyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347249421]
+visible = false
+shape = SubResource("CircleShape2D_31if0")
+
+[node name="ShadowManager" parent="." unique_id=85725248 instance=ExtResource("5_po83k")]

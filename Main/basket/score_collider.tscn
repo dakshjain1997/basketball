@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg35mss32fbu8"]
+
+[ext_resource type="Script" uid="uid://d3sjqghru740q" path="res://Main/basket/score_collider.gd" id="1_xwl3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j02yf"]
+size = Vector2(135, 10)
+
+[node name="ScoreCollider" type="Node2D"]
+script = ExtResource("1_xwl3q")
+
+[node name="UpperArea" type="Area2D" parent="."]
+disable_mode = 2
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_j02yf")
+
+[node name="LowerArea" type="Area2D" parent="."]
+position = Vector2(0, 3)
+disable_mode = 2
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
+position = Vector2(0, 50)
+shape = SubResource("RectangleShape2D_j02yf")

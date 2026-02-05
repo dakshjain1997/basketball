@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bhs8aml070ppp"]
+
+[ext_resource type="Script" uid="uid://lfuiqc6pkjj7" path="res://Main/MainMenu/main_menu.gd" id="1_2o346"]
+[ext_resource type="Texture2D" uid="uid://cadu70tggcjro" path="res://Main/textures/settings_normal.png" id="2_1jjqt"]
+[ext_resource type="Texture2D" uid="uid://modxvpuvq7v8" path="res://Main/textures/main_menu_bg.png" id="2_d235f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d235f"]
+texture = ExtResource("2_1jjqt")
+
+[node name="MainMenu" type="Control" unique_id=1340541039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2o346")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1695948940]
+layout_mode = 0
+offset_right = 2400.0
+offset_bottom = 1080.0
+texture = ExtResource("2_d235f")
+
+[node name="Quit" type="Button" parent="." unique_id=2004545534]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.855
+anchor_top = 0.86200005
+anchor_right = 0.929
+anchor_bottom = 0.89100003
+offset_top = 0.039978027
+offset_right = -0.60009766
+offset_bottom = -0.2800293
+text = "Quit
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1705202724]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.684
+anchor_top = 0.18100001
+anchor_right = 0.93000007
+anchor_bottom = 0.36900002
+offset_left = 0.39990234
+offset_top = 0.519989
+offset_right = -1.0002441
+offset_bottom = 0.47998047
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1141460871]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+text = "play"
+
+[node name="Cosmetics" type="Button" parent="VBoxContainer" unique_id=1467395398]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+text = "Cosmetics"
+
+[node name="Settings" type="Button" parent="." unique_id=1057416073]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75600004
+anchor_top = 0.827
+anchor_right = 0.78900003
+anchor_bottom = 0.901
+offset_left = -0.40014648
+offset_top = -0.16003418
+offset_right = 0.39990234
+offset_bottom = -0.08001709
+theme_override_styles/normal = SubResource("StyleBoxTexture_d235f")
+text = "
+"

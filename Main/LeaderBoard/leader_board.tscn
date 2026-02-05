@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cleo4i6l3snrn"]
+
+[ext_resource type="Script" uid="uid://djcksm2rgbrl4" path="res://Main/LeaderBoard/leader_board.gd" id="1_7lbo3"]
+[ext_resource type="Theme" uid="uid://jrmln0i1dtcs" path="res://Main/blue_ui_theme.tres" id="1_v2wni"]
+[ext_resource type="PackedScene" uid="uid://cv65rgpqhcy43" path="res://Main/LeaderBoard/ScoreElement/score_element.tscn" id="2_uph7h"]
+[ext_resource type="Texture2D" uid="uid://t27v4r0558k1" path="res://Main/textures/close_normal.png" id="3_53vlb"]
+[ext_resource type="Texture2D" uid="uid://o648hqfdi4yp" path="res://Main/textures/close_clicked.png" id="4_5efse"]
+[ext_resource type="Texture2D" uid="uid://b1ldsae1qhe8t" path="res://Main/textures/close_hover.png" id="5_y0587"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqo03"]
+texture = ExtResource("3_53vlb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tsq7"]
+texture = ExtResource("4_5efse")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhchi"]
+texture = ExtResource("5_y0587")
+
+[node name="LeaderBoard" type="Control" unique_id=1680205639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v2wni")
+script = ExtResource("1_7lbo3")
+
+[node name="close" type="Button" parent="." unique_id=1151526654]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1822.0
+offset_top = 9.0
+offset_right = 1872.0
+offset_bottom = 59.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqo03")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2tsq7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xhchi")
+
+[node name="ScoreElement" parent="." unique_id=1017194920 instance=ExtResource("2_uph7h")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 123.0
+offset_top = 287.0
+offset_right = 1817.0
+offset_bottom = 387.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ReturnToMenu" type="Button" parent="." unique_id=1886236219]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 41.0
+offset_right = 284.0
+offset_bottom = 81.0
+text = "back to menu"
+
+[node name="Retry" type="Button" parent="." unique_id=947166338]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 57.0
+offset_bottom = 109.0
+text = "retry"

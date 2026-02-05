@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btfjl5umejy13"]
+
+[ext_resource type="Script" uid="uid://b20xmk10f45hv" path="res://Main/pauseButton/pause_button.gd" id="1_d18mp"]
+[ext_resource type="Texture2D" uid="uid://n5m8r3e3nw48" path="res://Main/textures/pause_button.png" id="2_ithfy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6elwx"]
+texture = ExtResource("2_ithfy")
+
+[node name="pauseButton" type="Control" unique_id=2051099214]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d18mp")
+
+[node name="Button" type="Button" parent="." unique_id=95745982]
+layout_mode = 0
+offset_right = 71.0
+offset_bottom = 62.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6elwx")

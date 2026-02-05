@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c3bspoickrshi"]
+
+[ext_resource type="Script" uid="uid://bkigsoos8o4jy" path="res://Main/scoreManager/score_manager.gd" id="1_vf01f"]
+[ext_resource type="Texture2D" uid="uid://dhqavl480vd2s" path="res://Main/textures/digital_board.png" id="2_10352"]
+[ext_resource type="Texture2D" uid="uid://cfpsj1so8fd7w" path="res://Main/textures/digital_display_number_zero.png" id="3_q8u3v"]
+[ext_resource type="Texture2D" uid="uid://dy63e5yo8odv" path="res://Main/textures/digital_display_number_one.png" id="4_ejij0"]
+[ext_resource type="Texture2D" uid="uid://88qy3bmv0n0r" path="res://Main/textures/digital_display_number_two.png" id="5_h02gx"]
+[ext_resource type="Texture2D" uid="uid://cpmj30kuu1ks3" path="res://Main/textures/digital_display_number_three.png" id="6_qev2c"]
+[ext_resource type="Texture2D" uid="uid://bxomxabh73c71" path="res://Main/textures/digital_display_number_four.png" id="7_hy3s0"]
+[ext_resource type="Texture2D" uid="uid://cc7tnsdd141r1" path="res://Main/textures/digital_display_number_five.png" id="8_hoid4"]
+[ext_resource type="Texture2D" uid="uid://ctc4tiach04my" path="res://Main/textures/digital_display_number_six.png" id="9_qiyya"]
+[ext_resource type="Texture2D" uid="uid://cr62oqdj0rcd2" path="res://Main/textures/digital_display_number_seven.png" id="10_i5c4y"]
+[ext_resource type="Texture2D" uid="uid://cucofpd4x1pjd" path="res://Main/textures/digital_display_number_eight.png" id="11_33vih"]
+[ext_resource type="Texture2D" uid="uid://u4npd55rvi2k" path="res://Main/textures/digital_display_number_nine.png" id="12_isvmb"]
+[ext_resource type="Texture2D" uid="uid://2wqly3lpddch" path="res://Main/textures/digital_display_number_none.png" id="13_n26wh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1c82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q8u3v")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ejij0")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_h02gx")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qev2c")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hy3s0")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hoid4")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qiyya")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_i5c4y")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_33vih")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_isvmb")
+}],
+"loop": true,
+"name": &"9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_n26wh")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="ScoreControl" type="Control" unique_id=93181779]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vf01f")
+
+[node name="DisplayBoard" type="Sprite2D" parent="." unique_id=1514786248]
+position = Vector2(1277, 123)
+texture = ExtResource("2_10352")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=443650422]
+position = Vector2(1387, 90)
+sprite_frames = SubResource("SpriteFrames_m1c82")
+animation = &"none"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=91333779]
+position = Vector2(1320, 90)
+sprite_frames = SubResource("SpriteFrames_m1c82")
+animation = &"none"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1669845172]
+position = Vector2(1244, 90)
+sprite_frames = SubResource("SpriteFrames_m1c82")
+animation = &"none"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1026894101]
+position = Vector2(1174, 90)
+sprite_frames = SubResource("SpriteFrames_m1c82")
+animation = &"none"

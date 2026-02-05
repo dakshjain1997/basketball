@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://da5qmyrwpuvqv"]
+
+[ext_resource type="Texture2D" uid="uid://dwj0vs7i08hyt" path="res://brassground.png" id="2_5ijx0"]
+[ext_resource type="PackedScene" uid="uid://c3bspoickrshi" path="res://score_control.tscn" id="4_tvf21"]
+[ext_resource type="PackedScene" uid="uid://baywenna0yuvs" path="res://ball_spawner.tscn" id="5_8hk8x"]
+[ext_resource type="PackedScene" uid="uid://c160k3u8tidlm" path="res://basket.tscn" id="5_y5g1j"]
+[ext_resource type="PackedScene" uid="uid://brob2mic4du8j" path="res://input_manager.tscn" id="6_7nhxo"]
+[ext_resource type="PackedScene" uid="uid://bgfhs1dcbriy6" path="res://spawn_area.tscn" id="6_8lyca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_816n6"]
+size = Vector2(1020, 258)
+
+[node name="test" type="Node2D"]
+
+[node name="InputManager" parent="." instance=ExtResource("6_7nhxo")]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(988, 1108)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = ExtResource("2_5ijx0")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_816n6")
+metadata/_edit_lock_ = true
+
+[node name="ScoreControl" parent="." node_paths=PackedStringArray("Basket") instance=ExtResource("4_tvf21")]
+Basket = NodePath("../Basket")
+
+[node name="BallSpawner" parent="." instance=ExtResource("5_8hk8x")]
+position = Vector2(1495, 382)
+
+[node name="Basket" parent="." instance=ExtResource("5_y5g1j")]
+position = Vector2(218, 387)
+
+[node name="spawnArea" parent="." node_paths=PackedStringArray("ballSpawnerScene") instance=ExtResource("6_8lyca")]
+position = Vector2(950, 862)
+collision_layer = 4
+ballSpawnerScene = NodePath("../BallSpawner")

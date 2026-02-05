@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://benc16qlxe4rm"]
+
+[ext_resource type="Script" uid="uid://cgjvcd0n7gbnq" path="res://Main/basket/net.gd" id="1_0igdf"]
+[ext_resource type="Texture2D" uid="uid://bs6p38wsdua4b" path="res://Main/basket/netfixback.png" id="1_5cn6c"]
+[ext_resource type="Texture2D" uid="uid://bx2vy0dbkgqea" path="res://Main/basket/netfixfront.png" id="2_0igdf"]
+[ext_resource type="Texture2D" uid="uid://bsnie3w0std8s" path="res://Main/basket/netfixfrontrope.png" id="4_vc2bc"]
+[ext_resource type="Texture2D" uid="uid://cnt7loag515qv" path="res://Main/basket/netfixfrontnew.png" id="5_vc2bc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfmgg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_re4j4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p88st"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajpog"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l3nw0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glhdx"]
+
+[node name="net" type="Node2D"]
+script = ExtResource("1_0igdf")
+
+[node name="topLeft" type="StaticBody2D" parent="."]
+position = Vector2(-75, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topLeft"]
+shape = SubResource("CircleShape2D_vfmgg")
+
+[node name="topRight" type="StaticBody2D" parent="."]
+position = Vector2(80, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topRight"]
+shape = SubResource("CircleShape2D_re4j4")
+
+[node name="midLeft" type="RigidBody2D" parent="."]
+position = Vector2(-67, 48)
+collision_mask = 8
+mass = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="midLeft"]
+shape = SubResource("CircleShape2D_p88st")
+
+[node name="midRight" type="RigidBody2D" parent="."]
+position = Vector2(71, 48)
+collision_mask = 8
+mass = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="midRight"]
+shape = SubResource("CircleShape2D_ajpog")
+
+[node name="bottomLeft" type="RigidBody2D" parent="."]
+position = Vector2(-53, 94)
+collision_mask = 8
+mass = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomLeft"]
+shape = SubResource("CircleShape2D_l3nw0")
+
+[node name="bottomRight" type="RigidBody2D" parent="."]
+position = Vector2(63, 95)
+collision_mask = 8
+mass = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomRight"]
+shape = SubResource("CircleShape2D_glhdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(0, 40)
+texture = ExtResource("1_5cn6c")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(0, 40)
+texture = ExtResource("2_0igdf")
+metadata/_edit_lock_ = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-68, 21)
+node_a = NodePath("../topLeft")
+node_b = NodePath("../midLeft")
+bias = 0.9
+disable_collision = false
+softness = 0.1
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-57, 71)
+node_a = NodePath("../midLeft")
+node_b = NodePath("../bottomLeft")
+disable_collision = false
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(72, 22)
+node_a = NodePath("../topRight")
+node_b = NodePath("../midRight")
+bias = 0.9
+disable_collision = false
+softness = 0.1
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(61, 70)
+node_a = NodePath("../midRight")
+node_b = NodePath("../bottomRight")
+disable_collision = false
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-79, 50)
+rotation = 4.71239
+node_a = NodePath("../midLeft")
+node_b = NodePath("../midRight")
+length = 160.0
+stiffness = 1.0
+damping = 0.1
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-78, 93)
+rotation = 4.71239
+node_a = NodePath("../bottomLeft")
+node_b = NodePath("../bottomRight")
+length = 160.0
+stiffness = 4.0
+damping = 0.2
+
+[node name="frontPolygon" type="Polygon2D" parent="."]
+position = Vector2(-78, -15)
+texture = ExtResource("4_vc2bc")
+polygon = PackedVector2Array(-2.84409, 16.8345, 14.6033, 68.6635, 22.8144, 115.362, 148.025, 116.902, 148.533, 64.5611, 159.309, 11.1927)
+uv = PackedVector2Array(-2.84409, 16.8345, 14.6033, 68.6635, 22.8144, 115.362, 148.025, 116.902, 148.533, 64.5611, 159.309, 11.1927)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-80.322, -18.4733)
+scale = Vector2(1.00347, 1.06109)
+texture = ExtResource("1_5cn6c")
+polygon = PackedVector2Array(144.285, 113.911, 24.3887, 115.422, 17.8151, 65.7236, -1.6722, 14.5825, 161.761, 14.5824, 150.852, 66.4754)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(11, 59)
+scale = Vector2(1.00347, 1.06109)
+texture = ExtResource("5_vc2bc")

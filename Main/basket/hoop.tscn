@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bn84q0ik21nt7"]
+
+[ext_resource type="Script" uid="uid://dbjq6i2ip2vn1" path="res://Main/basket/hoop.gd" id="1_jxcf4"]
+[ext_resource type="PackedScene" uid="uid://dg35mss32fbu8" path="res://Main/basket/score_collider.tscn" id="1_mh0l6"]
+[ext_resource type="Texture2D" uid="uid://dpg7ln4yh42e7" path="res://Main/textures/hoopforward.png" id="3_8qq5m"]
+[ext_resource type="PackedScene" uid="uid://bgfhs1dcbriy6" path="res://Main/spawnArea/spawn_area.tscn" id="4_d2ugp"]
+[ext_resource type="Texture2D" uid="uid://binx1cvftgtc3" path="res://Main/textures/hoopforward_n.png" id="4_u2dbx"]
+[ext_resource type="Texture2D" uid="uid://by7rnk3erxm5o" path="res://Main/textures/hoopbehind.png" id="5_excjr"]
+[ext_resource type="Texture2D" uid="uid://diblr8c0epe0o" path="res://Main/textures/hoopbehind_n.png" id="7_3s0h7"]
+[ext_resource type="PackedScene" uid="uid://benc16qlxe4rm" path="res://Main/basket/net.tscn" id="7_gpaxq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xccgi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb6ei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab4v1"]
+size = Vector2(144, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnppx"]
+size = Vector2(140, 10)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q1ya3"]
+diffuse_texture = ExtResource("3_8qq5m")
+normal_texture = ExtResource("4_u2dbx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7q6r"]
+size = Vector2(131, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hmbah"]
+diffuse_texture = ExtResource("5_excjr")
+normal_texture = ExtResource("7_3s0h7")
+
+[node name="Hoop" type="StaticBody2D" unique_id=788873196]
+disable_mode = 2
+collision_layer = 3
+collision_mask = 4
+script = ExtResource("1_jxcf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373633453]
+position = Vector2(315.33, 0)
+shape = SubResource("CircleShape2D_xccgi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=347625618]
+position = Vector2(160, 0)
+shape = SubResource("CircleShape2D_sb6ei")
+
+[node name="Branch" type="StaticBody2D" parent="." unique_id=2120395772]
+position = Vector2(80, -5)
+disable_mode = 2
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch" unique_id=1124150217]
+position = Vector2(11, 1)
+shape = SubResource("RectangleShape2D_ab4v1")
+
+[node name="blocker" type="StaticBody2D" parent="." unique_id=1137775829]
+position = Vector2(235, 20)
+rotation = 3.14159
+disable_mode = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocker" unique_id=514587106]
+position = Vector2(8.74228e-08, 6)
+shape = SubResource("RectangleShape2D_tnppx")
+one_way_collision = true
+
+[node name="ScoreCollider" parent="." unique_id=983832854 instance=ExtResource("1_mh0l6")]
+position = Vector2(237.89, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1030755224]
+z_index = 2
+position = Vector2(165, -1)
+texture = SubResource("CanvasTexture_q1ya3")
+
+[node name="SpawnArea" parent="." unique_id=13552118 instance=ExtResource("4_d2ugp")]
+position = Vector2(78, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea" unique_id=2016227365]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_t7q6r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=113219118]
+z_index = -2
+position = Vector2(165, 0)
+texture = SubResource("CanvasTexture_hmbah")
+
+[node name="Net" parent="." unique_id=678797717 instance=ExtResource("7_gpaxq")]
+z_index = 1
+position = Vector2(235, 3)

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://6floo0qi8w0r"]
+
+[ext_resource type="Script" uid="uid://cnwqgnu6ly0ww" path="res://Main/ball/shadowManager/shadow_manager.gd" id="2_i8h5s"]
+[ext_resource type="Texture2D" uid="uid://bisc8oiho6els" path="res://Main/textures/ball_shadow_large.png" id="2_spkd5"]
+[ext_resource type="Texture2D" uid="uid://c38i4xagfryuj" path="res://Main/textures/ball_shadow_small.png" id="3_y0qdo"]
+[ext_resource type="Texture2D" uid="uid://b2hvphqi1x4l3" path="res://Main/ball/basketBallshadows.png" id="4_y0qdo"]
+[ext_resource type="Texture2D" uid="uid://cfe8e55p752l4" path="res://Main/ball/basketBallgradient.png" id="5_b5l42"]
+
+[node name="ShadowManager" type="Node2D"]
+process_mode = 3
+z_index = 1
+script = ExtResource("2_i8h5s")
+
+[node name="LargeShadow" type="Sprite2D" parent="."]
+texture = ExtResource("2_spkd5")
+
+[node name="SmallShadow" type="Sprite2D" parent="."]
+texture = ExtResource("3_y0qdo")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+texture = ExtResource("4_y0qdo")
+
+[node name="Gradient" type="Sprite2D" parent="."]
+texture = ExtResource("5_b5l42")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5xsyu0ytjuhu"]
+
+[ext_resource type="Script" uid="uid://b7w3x3radbqu" path="res://Main/ContinueMenu/continue_menu.gd" id="1_ddhc8"]
+
+[node name="ContinueMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddhc8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 473.0
+offset_right = 1067.0
+offset_bottom = 577.0
+
+[node name="TimerCountdown" type="Label" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 473.0
+offset_right = 861.0
+offset_bottom = 496.0
+
+[node name="UseCoins" type="Button" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 524.0
+offset_right = 908.0
+offset_bottom = 555.0
+text = "continue"
+
+[node name="ViewAd" type="Button" parent="."]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 523.0
+offset_right = 1001.0
+offset_bottom = 554.0
+text = "earn coins"
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 472.0
+offset_right = 1067.0
+offset_bottom = 503.0
+text = "x"
+
+[node name="EndRound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 522.0
+offset_right = 1059.0
+offset_bottom = 553.0
+text = "finish"

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dtxg2l0t2lj62"]
+
+[ext_resource type="Script" uid="uid://di16bve3mbjcg" path="res://Main/pauseMenu/pause_menu.gd" id="1_8qhi6"]
+[ext_resource type="Texture2D" uid="uid://t27v4r0558k1" path="res://Main/textures/close_normal.png" id="2_u4v4o"]
+[ext_resource type="Texture2D" uid="uid://o648hqfdi4yp" path="res://Main/textures/close_clicked.png" id="3_ukx1m"]
+[ext_resource type="Texture2D" uid="uid://b1ldsae1qhe8t" path="res://Main/textures/close_hover.png" id="4_5ekpa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g08ho"]
+texture = ExtResource("2_u4v4o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrj5h"]
+texture = ExtResource("3_ukx1m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua44a"]
+texture = ExtResource("4_5ekpa")
+
+[node name="pauseMenu" type="Control" unique_id=1959989580]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1200.0
+offset_top = 670.0
+offset_right = -1200.0
+offset_bottom = -670.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_8qhi6")
+
+[node name="Panel" type="Panel" parent="." unique_id=1239664940]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -119.5
+offset_right = 131.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="VBoxContainer" parent="Panel" unique_id=499035686]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -83.5
+offset_right = 90.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer" unique_id=273147802]
+layout_mode = 2
+text = "menu"
+horizontal_alignment = 1
+
+[node name="forfit" type="Button" parent="Panel/PanelContainer" unique_id=595194066]
+process_mode = 2
+layout_mode = 2
+text = "Forfit"
+
+[node name="quit" type="Button" parent="Panel/PanelContainer" unique_id=1600818646]
+process_mode = 2
+layout_mode = 2
+text = "Quit"
+
+[node name="settings" type="Button" parent="Panel/PanelContainer" unique_id=305494842]
+process_mode = 2
+layout_mode = 2
+text = "Settings"
+
+[node name="close" type="Button" parent="Panel" unique_id=669258681]
+process_mode = 2
+layout_mode = 0
+offset_left = 222.0
+offset_top = 1.0
+offset_right = 261.0
+offset_bottom = 35.5
+theme_override_styles/normal = SubResource("StyleBoxTexture_g08ho")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vrj5h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ua44a")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://da5qmyrwpuvqv"]
+
+[ext_resource type="Texture2D" uid="uid://dwj0vs7i08hyt" path="res://brassground.png" id="2_5ijx0"]
+[ext_resource type="PackedScene" uid="uid://bn84q0ik21nt7" path="res://hoop.tscn" id="3_2s4n8"]
+[ext_resource type="PackedScene" uid="uid://c2j2f3lwd8mn1" path="res://ball.tscn" id="3_ru74f"]
+[ext_resource type="PackedScene" uid="uid://c3bspoickrshi" path="res://score_control.tscn" id="4_tvf21"]
+[ext_resource type="PackedScene" uid="uid://baywenna0yuvs" path="res://ball_spawner.tscn" id="5_8hk8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_816n6"]
+size = Vector2(1020, 258)
+
+[node name="test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(1348, 1108)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = ExtResource("2_5ijx0")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_816n6")
+metadata/_edit_lock_ = true
+
+[node name="Ball" parent="." instance=ExtResource("3_ru74f")]
+position = Vector2(1298, 37)
+
+[node name="hoop" parent="." instance=ExtResource("3_2s4n8")]
+position = Vector2(1064, 513)
+
+[node name="Ball2" parent="." instance=ExtResource("3_ru74f")]
+position = Vector2(1114, 343)
+
+[node name="ScoreControl" parent="." node_paths=PackedStringArray("hoop") instance=ExtResource("4_tvf21")]
+hoop = NodePath("../hoop")
+
+[node name="BallSpawner" parent="." instance=ExtResource("5_8hk8x")]
+position = Vector2(1642, 381)

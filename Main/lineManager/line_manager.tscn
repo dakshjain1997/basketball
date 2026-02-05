@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuqmeek386lpl"]
+
+[ext_resource type="Script" uid="uid://c0nhdern1ntti" path="res://Main/lineManager/line_manager.gd" id="1_erelh"]
+[ext_resource type="Texture2D" uid="uid://dk2pi6xa30exp" path="res://Main/lineManager/doted_line.png" id="1_qp6vx"]
+
+[node name="lineManager" type="Line2D"]
+width = 20.0
+default_color = Color(2.5028e-06, 0.865374, 0.868411, 1)
+texture = ExtResource("1_qp6vx")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("1_erelh")

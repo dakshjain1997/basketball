@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://4526w4ah7elp"]
+
+[ext_resource type="Script" uid="uid://dosqxixeqb4wx" path="res://Main/GameMenu/game_menu.gd" id="1_ufwj5"]
+[ext_resource type="Texture2D" uid="uid://bo85rmam8y6y5" path="res://Main/textures/game_menu_bg.png" id="2_bacne"]
+
+[node name="GameMenu" type="Control" unique_id=1430021301]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufwj5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1853621004]
+layout_mode = 0
+offset_right = 2400.0
+offset_bottom = 1080.0
+texture = ExtResource("2_bacne")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=781323475]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.633333
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=982362986]
+layout_mode = 2
+text = "basket ball game"
+horizontal_alignment = 1
+
+[node name="ScoreRush" type="Button" parent="HBoxContainer" unique_id=1276148654]
+layout_mode = 2
+action_mode = 0
+text = "Score Rush"
+
+[node name="TimeAttack" type="Button" parent="HBoxContainer" unique_id=1508379680]
+layout_mode = 2
+text = "Time Attack"
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=1176458239]
+layout_mode = 2
+text = "Back"

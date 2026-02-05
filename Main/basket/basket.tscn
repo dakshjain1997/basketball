@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c160k3u8tidlm"]
+
+[ext_resource type="PackedScene" uid="uid://bn84q0ik21nt7" path="res://Main/basket/hoop.tscn" id="1_hclc6"]
+[ext_resource type="Texture2D" uid="uid://dnnkllho1l4xl" path="res://Main/textures/backGlass.png" id="2_bwg5y"]
+[ext_resource type="Texture2D" uid="uid://dr54rmef5u4n7" path="res://Main/textures/pillar.png" id="2_uebx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4c5r"]
+size = Vector2(10, 180)
+
+[node name="Basket" type="StaticBody2D" unique_id=1276303835]
+
+[node name="Hoop" parent="." unique_id=1282578149 instance=ExtResource("1_hclc6")]
+position = Vector2(-13, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105678187]
+position = Vector2(0, -90)
+shape = SubResource("RectangleShape2D_s4c5r")
+
+[node name="pillar" type="Sprite2D" parent="." unique_id=2037421844]
+z_index = -3
+position = Vector2(-41, 367)
+texture = ExtResource("2_uebx7")
+
+[node name="BackGlass" type="Sprite2D" parent="." unique_id=1143593703]
+z_index = -2
+position = Vector2(19, -75)
+texture = ExtResource("2_bwg5y")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjiltq3m3iaai"]
+
+[ext_resource type="Script" uid="uid://cc3hx3xunrs1" path="res://Main/timer/timer.gd" id="1_hg6fx"]
+
+[node name="Timer" type="Timer"]
+one_shot = true
+script = ExtResource("1_hg6fx")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://jrmln0i1dtcs"]
+
+[ext_resource type="Texture2D" uid="uid://vx83bpfch334" path="res://Main/textures/cloudesky.png" id="1_s8qtg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8qtg"]
+texture = ExtResource("1_s8qtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hov7t"]
+texture = ExtResource("1_s8qtg")
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_s8qtg")
+Label/colors/font_color = Color(0.60508466, 0.83257514, 0.95804316, 1)
+Label/colors/font_outline_color = Color(0.0529837, 0.20458272, 0.27527314, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 26
+Panel/styles/panel = SubResource("StyleBoxTexture_hov7t")
